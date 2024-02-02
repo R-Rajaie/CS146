@@ -10,12 +10,18 @@ Given a string s, return true if it is a palindrome, or false otherwise.
 
 public class hw1java {
     public static void main(String[] args) {
-        String s = "Abba";
+        String s = "Abb--a";
+        System.out.println(s + " is palindrome: ");
         System.out.println(isPalindrome(s));
     }
     public static boolean isPalindrome(String s){
         s = s.toLowerCase();
-        System.out.println(s + "");
+
+        for(int i = 0; i < s.length(); i++){
+            if(!Character.isLetterOrDigit(s.charAt(i))){
+                s = s.substring(0, i) + s.substring(i + 1);
+            }
+        }
         return isPalindromeRecurse(s);
     }
     public static boolean isPalindromeRecurse(String s){
