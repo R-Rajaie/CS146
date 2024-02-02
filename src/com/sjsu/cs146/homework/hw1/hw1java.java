@@ -8,13 +8,13 @@ Alphanumeric characters include letters and numbers.
 Given a string s, return true if it is a palindrome, or false otherwise.
  */
 
-public class hw1 {
+public class hw1java {
     public static void main(String[] args) {
         String s = "";
         System.out.println(isPalindrome(s));
     }
     public static boolean isPalindrome(String s){
-        
+
         return true;
     }
 }

@@ -8,7 +8,7 @@ An Anagram is a word or phrase formed by rearranging the letters of a different 
 typically using all the original letters exactly once.
  */
 
-public class lab2 {
+public class lab2java {
     public static void main(String[] args) {
         String s = "abcde";
         String t = "cabde";
