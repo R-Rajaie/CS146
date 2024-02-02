@@ -16,4 +16,5 @@ public class hw2java {
     public static void main(String[] args) {
 
     }
+
 }
