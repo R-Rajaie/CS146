@@ -1,0 +1,11 @@
+The first qualification is to ensure the string is devoid of non-alphanumeric characters and is in complete lowercase
+I chose to do this in Java by first converting the string to lowercase and then slicing out anything that isn't alphanumeric.
+In Python, I chose to reconstruct the string, only allowing characters that are alphanumeric and then converting to lowercase.
+
+After, I created recursive functions in both Java and Python to evaluate if the string is a palindrome.
+The base case evaluates if the string is 1 or 0 characters long. A string with less than 2 characters is automatically a palindrome.
+We then evaluate if the first and last character in the string are equal or not. These would be the symmetric parts of the palindrome.
+If they are not equal, then it is not a palindrome, and we can return false. If they are, we shave them off (as to ignore them).
+We then recurse with this new string. 'abba' will turn into 'bb' since a == a, then 'bb' will turn into a zero character string
+since b == b, then the base case will return true since a 0 character string is automatically a palindrome.
+For 'babba' however, the first character 'b' and last character 'a' are not equal, so the function returns false.
