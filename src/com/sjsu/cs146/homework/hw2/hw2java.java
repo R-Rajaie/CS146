@@ -15,26 +15,33 @@ You should minimize the number of calls to the API.
 import java.util.Arrays;
 
 public class hw2java {
+    public static int length;
+
     public static void main(String[] args) {
-        boolean[] versions = new boolean[30];
-        int firstBad = 29;
 
-        Arrays.fill(versions, firstBad, versions.length, true);
-
-        int version = findBad(versions);
+        int version = findBad();
         System.out.println("The first bad version is: " + (version + 1) + " [index: " + version + "]");
     }
-    public static int findBad(boolean[] versions){
+    public static int findBad(){
         int first = 0;
-        int last = versions.length;
+        int last = length;
         while(first < last){
             int middle = first + (last - first) / 2;
 
-            if(isBad(versions[middle])) last = middle;
+            if(isBad(middle)) {
+                if(!isBad(middle - 1)) return middle;
+                last = middle;
+            }
             else first = middle + 1;
         }
         return first;
     }
 
-    public static boolean isBad(boolean b){ return b; }
+    public static boolean isBad(int x){
+        boolean[] versions = new boolean[length];
+        int firstBad = 29;
+
+        Arrays.fill(versions, firstBad, versions.length, true);
+        return versions[x];
+    }
 }
