@@ -1,0 +1,19 @@
+MATRIX_MULTIPLY(A, B):
+c1    if columns(A) ≠ rows(B):
+'c2'        raise ValueError("Matrix multiplication is not defined.")
+
+c3    rows_A ← number of rows in A
+c4    cols_A ← number of columns in A
+c5    cols_B ← number of columns in B
+c6    result ← matrix of size rows_A x cols_B filled with zeros
+
+i        for i from 1 to rows_A do:
+j (i - 1)   for j from 1 to cols_B do:
+j - 1           sum ← 0
+k (j - 1)       for k from 1 to cols_A do:
+k - 1               sum ← sum + A[i][k] * B[k][j]
+j - 1           result[i][j] ← sum
+
+c7    return result
+
+c1 + c2 + c3 + c4 + c5 + c6 + c7
