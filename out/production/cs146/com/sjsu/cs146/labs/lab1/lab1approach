@@ -1,0 +1,8 @@
+For testing purposes, I create a loop that goes through an array of [1,2,3,4,5] to evaluate a target integer of 0 through 10.
+There are probably better arrays that cover more cases and have only 1 answer per target but I am confident the algorithm is correct :]
+
+First, we create a hashmap. We loop thru our array and populate this hashmap with the key representing the values in the array
+and values representing their indexes in the array.
+As we do this, we ask if there exists a key that is equal to the target minus the key we just added. This is the current keys 'counterpart'
+If this exists (and we ensure that we're not using the same element), we know we have the two numbers needed, so we retrieve
+their indexes and return those.
