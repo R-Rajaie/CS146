@@ -39,12 +39,15 @@ What is the
 
 1. Best Case
 If your n is divisible by 2, your function will evaluate as false on the first iteration,
-meaning that it would be a constant time at Omega(1).
+meaning that it would be a constant time at Theta(1).
 
 2. Worst Case
 If your n is prime, i will iterate until i^2 <= n (or i <= sqrt(n)). This means that our worst case is Theta(sqrt(n)).
 
 3. Average Case
-
+For most numbers I'd venture to guess that you can find most of them pretty quick. Half of all numbers are even and
+you'd find those right off the bat, a third of the remaining ones are multiples of 3, and so on. So probably this would
+be something around a log since you're cutting out a lot of the possibilities each time, leading me to believe it would
+be Theta(log n).
 
 Time complexity for the above function?
