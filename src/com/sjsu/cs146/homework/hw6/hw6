@@ -2,7 +2,8 @@ This one is a bit of a doozy!
 
 First I create a set and fill it with my array. This will create sort of a "manifest" of numbers I should check.
 No use in checking the potential corresponding numbers for -2 if I've already done it before. So this set will contain
-each unique number I should check for.
+each unique number I should check for. I also convert the array into an arraylist so that I can do other things easier
+like take out the number I'm searching for so that I don't accidentally have two numbers with the same index.
 
 I then loop through this set, and for each one, I try and find a twoSum in the original array that corresponds to it.
 For example, if my current number in the set is -5, I try to find a twoSum in the array that results in -5.
