@@ -5,13 +5,13 @@ No use in checking the potential corresponding numbers for -2 if I've already do
 each unique number I should check for. I also convert the array into an arraylist so that I can do other things easier
 like take out the number I'm searching for so that I don't accidentally have two numbers with the same index.
 
-I then loop through this set, and for each one, I try and find a twoSum in the original array that corresponds to it.
-For example, if my current number in the set is -5, I try to find a twoSum in the array that results in -5.
-If I find one, then I can make a triplet arraylist out of the three numbers I have.
-I will sort it (we use collections.sort because I don't particularly care about the time complexity if we're only
-dealing with 3 elements), then add it to ANOTHER set that contains arraylists.
-Since we sorted it (and list objects do deep equality), it will eliminate duplicate triplets without use needing to do
-our own messy comparisons.
+The main driver loops through the set manifest, which then performs a modified twoSum on each number in the set.
+Essentially, if we're on "2", we try to find a twoSum that equals -2. Say, -2 and 0.
+We add those two numbers and 2 ([2,-2,0]), then sort it and throw it in a set so that all duplicate triplets are
+filtered out by the set.
+It's a little inefficient since we have to find all valid possibilities rather than just the first valid one like for
+twoSum, so we can't stop at the first valid match. There's probably a more time efficient way to do it,
+I just don't know what it is.
 
 Once we have gone through that entire manifest, we can quickly convert that set of lists into a list of lists (since
 we need to return a list of lists), then return it.
