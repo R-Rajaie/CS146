@@ -1,0 +1,13 @@
+A quick summary of insertion sort is (assuming a worst case):
+n       for second index to length of array
+n - 1       do stuff
+n (n - 1)   while the current index hasn't been sorted
+(n - 1) (n - 1) sort current index
+
+While there are some parts of the specific pseudocode I left out,
+this representation accurately shows that it will eventually become a
+polynomial of form ax^2 + bx + c (because of the (n - 1) (n - 1)),
+meaning that it is an equation of the second exponent.
+This means that it can be simplified to an equation of form ax^2 which will effectively
+be an equation of time complexity n^2
+

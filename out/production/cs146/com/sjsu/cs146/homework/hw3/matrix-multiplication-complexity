@@ -18,4 +18,9 @@ c13   return result
 
 = c1 + c2 + c3 + c4 + c5 + c6 + c7 (i) + c8 (i - 1) (j) + c9(i - 1) (j - 1) + c10 (i - 1) (j - 1) (k) + c11 (i - 1) (j - 1) (k - 1) + c12 (i - 1) (j - 1) + c13
 = i+j(i−1)+k(i−1)(j−1)+(i−1)(j−1)(k−1)+2(i−1)(j−1)+7
+= i^2 - i + ij - j + k (ij - i - j +  1) + (ij - i - j + 1) (k - 1) + 2(ij - j - i + 1) + 7
+= i^2 - i + ij - j + kij - ik - kj + k + ijk - ij - ik + i - jk + j + k - 1 + 2ij - 2j - 2i + 2 + 7
 
+This algorithm has 3 loops inside of each other, meaning that it is a polynomial of the order of ax^3 + bx^2 + cx + d.
+We can simplify this down to the highest exponent since that is the part of the algorithm that will grow the fastest
+as the inputs do, meaning that it is of the order n^3.

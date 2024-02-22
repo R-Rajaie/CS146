@@ -1,0 +1,16 @@
+This one is a bit of a doozy!
+
+First I create a set and fill it with my array. This will create sort of a "manifest" of numbers I should check.
+No use in checking the potential corresponding numbers for -2 if I've already done it before. So this set will contain
+each unique number I should check for.
+
+I then loop through this set, and for each one, I try and find a twoSum in the original array that corresponds to it.
+For example, if my current number in the set is -5, I try to find a twoSum in the array that results in -5.
+If I find one, then I can make a triplet arraylist out of the three numbers I have.
+I will sort it (we use collections.sort because I don't particularly care about the time complexity if we're only
+dealing with 3 elements), then add it to ANOTHER set that contains arraylists.
+Since we sorted it (and list objects do deep equality), it will eliminate duplicate triplets without use needing to do
+our own messy comparisons.
+
+Once we have gone through that entire manifest, we can quickly convert that set of lists into a list of lists (since
+we need to return a list of lists), then return it.
