@@ -44,6 +44,7 @@ public class hw6 {
                     nonDupList.add(trip);
                 }
             }
+            list.add(num);
 
         }
         return new ArrayList<>(nonDupList);
