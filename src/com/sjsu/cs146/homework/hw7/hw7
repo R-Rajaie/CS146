@@ -1,0 +1,8 @@
+We split the 2D array into two arrays so they're easier to deal with. We make one for the starts, one for the ends,
+populate them, then sort them. We're okay with sorting them like this since we don't particularly care if they get
+out of order with each other since we really only care about the overlaps in start and end times.
+
+So we enter our second loop, which drives the algorithm. If we find a job that starts before the end of another one,
+we increment the counter to increase the number of needed servers. Otherwise, we move on until we find another end.
+
+We return our count after.
