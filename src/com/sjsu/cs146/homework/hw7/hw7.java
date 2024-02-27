@@ -4,22 +4,33 @@ import java.util.*;
 public class hw7 {
     public static void main(String[] args) {
         int[][] input = {
-                {0,30},
-                {5,10},
-                {15,20},
+                {0, 30},
+                {5, 10},
+                {0, 20},
         };
-        minMeetingRooms(input);
+        System.out.println(minMeetingRooms(input));
     }
-    public static int minMeetingRooms(int[][] intervals){
-        Arrays.sort(intervals, 0, intervals.length - 1);
 
-        return 0;
+    public static int minMeetingRooms(int[][] intervals) {
+        int len = intervals.length;
+        int cntr = 0;
+
+        int[] starts = new int[len];
+        int[] ends = new int[len];
+
+        for(int i = 0; i < len; i++){
+            starts[i] = intervals[i][0];
+            ends[i] = intervals[i][1];
+        }
+
+        Arrays.sort(starts);
+        Arrays.sort(ends);
+
+        int k = 0;
+        for(int j = 0; j < len; j++){
+            if(starts[j] < ends[k]) cntr++;
+            else k++;
+        }
+        return cntr;
     }
 }
-/*
-        for (int[] i: intervals) {
-            System.out.print("[");
-            for (int j: i) System.out.println(j + ", ");
-            System.out.println("], ");
-        }
- */
