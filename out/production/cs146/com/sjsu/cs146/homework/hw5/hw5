@@ -1,0 +1,66 @@
+For each of the following recurrences, verify the answer you get by applying the master method,
+by solving the recurrence algebraically OR applying the recursion tree method.
+
+1. T(N) = 2T(N-1) + 1
+T(N-1) = 2T(N-2) + 1
+T(N) = 2T(2T(N-2) + 1) + 1
+= 4T(N-2) + 2 + 1
+= 4T(N-2) + 3
+T(N) = 2(2(2T(N-3) + 1) + 1) + 1
+= 8T(N-3) + 4 + 2 + 1 = 8T(N-3) = 7
+This follows a pattern of T(N) = (2^n * T(N-k)) + 2^k - 1
+Say we have N - k = 0
+We will thus have T(N) = (2^n * T(0)) + 2^k - 1
+T(0) is constant so we can treat as 1 and n = k, thus:
+T(N) = (2^n * 1) + 2^n - 1
+= 2^n + 2^n - 1
+= (2 * 2^n) - 1 = 2^(n+1) - 1
+This is also a function of Theta(2^n)
+
+2. T(N) = 3T(N-1) + n
+T(N-1) = 3T(N-2)+ n
+T(N) = 3(3T(N-2) + n) + n
+= 9(T(N - 2) + 3n + n = 9T(N-2) + 4n
+T(N) = 3(3(3T(N-3) + n) + n) + n
+= 3(9T(N-3) + 3n + n) + n
+= 27T(N-3) + 9n + 3n + n = 27T(N-3) + 13n
+this can be generalized as T(N) = 3^n * T(N - k) + (3^(n-1)) * n + (3^(n-2)) * n + ... + (3^(n-k)) * n = (3^n - 1)/2
+If N = k, N - k = 0, then we can say it is
+T(N) = 3^n * 1 + (3^n - 1)/2 = 3^n + (3^n + 1) / 2 = 3/2 * 3^n - 1/2
+This is also a function of Theta(3^n)
+
+
+3. T(N) = 9T(N/2) + n^2
+We can use the master theorem for divide and conquer functions
+this is of form aT(N/b) + f(N)
+The solution would be of form N^(logb(a))
+In this, it would be N^(log2(9))
+And the time complexity would be approx Theta(N^(log2(9))), or about Theta(N^3.17) which can be simplified to about
+Theta(N^3)
+
+
+4. T(N) = 100T(N/2) + n^(log2cn + 1)  (c is a constant)
+We can use the same theorem. Since f(n) is of form n^(logb(a) + e),
+we can then say T(n) = Theta(n^log2(cn)+1). c is basically worthless here so we can simplify to say that it is equal to
+Theta(n^log2(n)+1)
+
+5. T(N) = 4T(N/2) + n^2logn
+We can attempt to use the divide and conquer master theorem again. In this situation, logb(a) is going to be log2(4) = 2
+So, it would be N^2. Since N^2 log N > N^2 by a logN, it will fulfill the second case, giving us a solution of
+T(N) = Theta(N^2 * log2(N))
+
+6. T(N) = 5T(N/2) + (n^2)/logn
+N^logb(a) in this scenario is N^log2(5) which is a little bit over N^2. In this situation, (n^2)/log n is smaller than
+N^2 at large numbers so, we can say T(N) = Theta(N^2).
+
+Come up with a recurrence relation, and solve that recurrence relation using any method of your choice.
+yetAnotherFunc(n):
+  if n > 1:
+    for(i=0;i<10n;i++)
+      doSomething;
+    yetAnotherFunc(n/2);
+    yetAnotherFunc(n/2);
+
+This will be approximately of the form T(N) = 2T(N/2) + 10 since we have 2 instances of N/2 running and each iteration
+includes 10n iterations of doSomething. For this, we can use the divide and conquer master theorem to find an
+N^(log2(2)) = N^1. Using the master theorem, we can then say T(N) = Theta(N * log n) = Theta(nlogn)

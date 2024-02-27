@@ -1,0 +1,53 @@
+Problem 1:
+Let's compare some basic math functions to refresh our memory. For each of the following,
+just write which function is asymptotically greater (So, you should be thinking about your asymptotic notations!).
+Show your reasoning for the same.
+
+1. 10000000000n^2 vs n^3
+While the first function seems to be unimaginably huge, as both functions approach very large numbers,
+n^3 will eventually overtake 10000000000n^2. The point at which n^3 overtakes 10000000000n^2 is when n = 10000000000.
+Probably larger than most practical applications, but this means that n^3 will still be asymptotically greater as it will
+be the larger function past that value of n till infinity.
+
+2. n^2*log(n) vs n(log(n))^10
+n(log(n))^10 equals n * 10 * log(n) = 10n * log(n). Dividing both sides by log(n), we get n^2 versus 10n.
+n^2 definitely increases at a greater rate than 10n (n^2 is greater for all n > 10), so we can say that n^2*log(n) is
+greater than n(log(n))^10.
+
+3. n^(logn) vs 2^sqrt(n)
+Taking the log of both sides, you get log(n) * log(n) vs sqrt(n) * log(2). We can take log n again,
+getting log(log(n))^2 versus log(sqrt(n) * log 2), equaling 2log(log(n)) versus log(n) + log(log(2)).
+log(log(2)) is a constant and very small so we can effectively ignore it,
+and log(n) is definitely greater than 2log(log(n)) since the extra log is going to bog down the first function far more
+than the 2 multiplier will bring it up, so 2^sqrt(n) will be the asymptotically greater function.
+
+4. 2^n vs 2^(2n)
+2^2n would be asymptotically greater. For all n, 2n would be greater. The greater a numbers power is, the bigger that number would be,
+so 2^2n would always be greater than 2^n (assuming n >= 0).
+
+Problem 2:
+Now let's examine some [pseudo]code and apply asymptotic notation to it.
+
+isPrime(n):
+  for(i = 2, i*i <= n; i++) {
+    if(n % x == 0) {
+      return false
+    }
+  return true
+
+What is the
+
+1. Best Case
+If your n is divisible by 2, your function will evaluate as false on the first iteration,
+meaning that it would be a constant time at Theta(1).
+
+2. Worst Case
+If your n is prime, i will iterate until i^2 <= n (or i <= sqrt(n)). This means that our worst case is Theta(sqrt(n)).
+
+3. Average Case
+For most numbers I'd venture to guess that you can find most of them pretty quick. Half of all numbers are even and
+you'd find those right off the bat, a third of the remaining ones are multiples of 3, and so on. So probably this would
+be something around a log since you're cutting out a lot of the possibilities each time, leading me to believe it would
+be Theta(log n).
+
+Time complexity for the above function?

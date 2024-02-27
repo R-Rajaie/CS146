@@ -1,0 +1,2 @@
+We use binary search to hone in on the first bad version easier.
+If we find a bad version we also check to see if the version next to it is bad cause then we can shorten the process.

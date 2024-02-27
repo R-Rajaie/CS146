@@ -1,0 +1,10 @@
+We don't need to actually construct the palindrome, so as long as we know the ingredients that go into making a palindrome,
+we can figure it from there.
+
+Thankfully, we know! A palindrome has an even number of all letters, but it can have ONE letter with odd numbered
+occurrences. This means that we essentially just need to find the total number of letters (ie, the longest possible
+palindrome), then subtract the number of odd letters (in order to "make them even"), then add back in 1 to compensate
+for our allotted single odd letter if we had odd letters.
+
+Thankfully, we know if we need to add 1 back if we have already decreased the palindrome amount at all (meaning that at
+least one odd numbered letter was present and was adjusted for).
