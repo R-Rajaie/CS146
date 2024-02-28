@@ -1,0 +1,16 @@
+Best case: Your insertion sort will keep reaching the while loop on the inside of the for loop and won't even
+enter the while loop because your array is already sorted in the best case.
+This means that it will only really just iterate over your array and do a couple additional operations for the key
+on each loop, making it a Theta(n) operation.
+
+Worst case: Your array something like reverse sorted in this example. In this case, the second element would need to be
+sorted against 1 element before being sorted, the third element would be sorted against 2, all the way up to the nth
+element which has to be sorted against (i think) n - 1 elements. This would make it a summation of i from i to n - 1.
+This simplifies to [(n-1)(n)]/2 = (n^2 - n) / 2 which we can more or less simplify to O(n^2).
+
+Average case: I would guess this would be similar to the worst case, so each element will on average be sorted somewhere
+between none and what it would be in the worst case. This would hover around half of what the worst case would be,
+so we can just take an approximation and say that it will be 1/2 * the sum which is 1/2 * (n^2- 2) / 2.
+We can simplify this to around (n^2-n) / 4.
+Though this will be faster than the worst case (by about half) we don't really have anything better (to my knowledge)
+than n^2 to bound it so we'll just put it at a solid O(n^2).

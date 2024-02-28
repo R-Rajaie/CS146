@@ -1,0 +1,6 @@
+Best, Worst, Average: Matrix multiplication (at least in the way shown to be implemented) will never really change
+in speed depending on what is inside the matrix. This means that two matrix multiplication operations will roughly
+take the same time (given that the data types are the same).
+This means that our n^3 approximation from the last assignment can be lifted and stuffed into a Theta. We can use
+theta since matrix multiplication is very tightly bounded. We can make the best, worst, and average case the same
+because of the aforementioned reasons too. This means that our final answer for all three is Theta(n^3).

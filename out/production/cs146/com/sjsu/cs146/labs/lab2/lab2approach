@@ -1,0 +1,5 @@
+We first ensure the strings are of equal length to instantly filter non-anagrams.
+We create maps that assign a count for each character found in each string.
+We then return if the maps equal to each other.
+Since anagrams a property of anagrams is that they must have the same quantity of characters,
+this will essentially confirm if they are anagrams or not.

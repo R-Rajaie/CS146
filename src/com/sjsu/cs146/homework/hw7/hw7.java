@@ -8,10 +8,11 @@ public class hw7 {
                 {5, 10},
                 {0, 20},
         };
-        System.out.println(minMeetingRooms(input));
+        hw7 ServerManager = new hw7();
+        System.out.println(ServerManager.minMeetingRooms(input));
     }
 
-    public static int minMeetingRooms(int[][] intervals) {
+    public int minMeetingRooms(int[][] intervals) {
         int len = intervals.length;
         int cntr = 0;
 
