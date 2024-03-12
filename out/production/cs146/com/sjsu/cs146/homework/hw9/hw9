@@ -1,0 +1,9 @@
+Since we know that we're working with a BST it makes our job a lot easier.
+We're given the root, so we know we can start there since the root is a common ancestor of all the nodes.
+We have to approach this kinda backwards,
+but the gist is to evaluate the values of the nodes p and q in comparison to the root.
+If they are both less than the root, we know
+
+I want to say the time complexity would be Theta(logn) for avg and worst cases since we're going to be paring down
+our options by half each recursion. For best case however, the root is the LCA and we immediately return that, giving
+us a Theta(1) time complexity.
