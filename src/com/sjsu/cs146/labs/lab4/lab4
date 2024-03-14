@@ -1,0 +1,8 @@
+In our method, we first check to make sure the parent node isn't null before we do anything to it.
+
+We then separate our cases into 3 distinct cases. Either the left is null and the right isn't, vice versa,
+or both nodes are there. If one node is there and the other isn't, we enter one of the first two cases, where we will
+switch the nodes (taking care to ensure that the null is carried correctly),
+then we call the method on the existing node. If both nodes are present,
+we will swap them then call the method on both. This recursively covers every node to make sure that its children are
+flipped, creating an inverted tree.
