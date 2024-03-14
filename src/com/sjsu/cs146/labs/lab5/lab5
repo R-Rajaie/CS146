@@ -1,0 +1,15 @@
+We want to approach this by setting bounds for each node. In order to do this,
+we need a helper method so that we can pass a min and max into the method since the given header doesn't provide it.
+We set them as the integer limits for now since for the root there are no real bounds.
+
+Our main method essentially checks if the given node is within the bounds. We first check if the node is null,
+since null nodes will often be passed and we'll want to return them immediately as true so we don't have to deal with
+them any longer. Next we'll check to see if the node is less than our min or greater than our max (ie, breaking the bounds),
+Before we then repeat the process on the left and right nodes,
+setting the bounds as follows:
+Left node will have bounds of the current min and its parent - 1. (since it MUST be less than its parent)
+Right node will have bounds of its parent + 1 and the max.
+
+If the given BST is valid, all of the nodes will pass through the bounds cleanly.
+However, if an out of place node is found, the && statement will begin returning a chain of falses,
+eventually giving a final answer of false.
