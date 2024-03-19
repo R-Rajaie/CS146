@@ -2,12 +2,12 @@ package com.sjsu.cs146.labs.lab4;
 
 public class lab4 {
     public static void main(String[] args) {
-        TreeNode three = new TreeNode(1);
-        TreeNode four = new TreeNode(1);
-        TreeNode five = new TreeNode(1);
-        TreeNode six = new TreeNode(1);
-        TreeNode two = new TreeNode(1, three, four);
-        TreeNode eight = new TreeNode(1, five, six);
+        TreeNode three = new TreeNode(3);
+        TreeNode four = new TreeNode(4);
+        TreeNode five = new TreeNode(5);
+        TreeNode six = new TreeNode(6);
+        TreeNode two = new TreeNode(2, three, four);
+        TreeNode eight = new TreeNode(8, five, six);
         TreeNode one = new TreeNode(1, two, eight);
         System.out.println(one.left + " " + one.right);
         invertTree(one);
