@@ -28,8 +28,18 @@ class Solution():
                 image[x][y + 1] = color
                 queue.append([x, y + 1])
 
-            if Solution.isIn(image, m, n, x + 1, y, num, color):
+            if Solution.isIn(image, m, n, x, y - 1, num, color):
                 image[x][y - 1] = color
                 queue.append([x, y - 1])
 
         return image
+    
+image = [
+    [1,1,1],
+    [1,1,0],
+    [1,0,1]
+]
+
+solution = Solution()
+image = solution.floodFill(image, 1, 1, 2)
+print(image)
