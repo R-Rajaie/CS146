@@ -1,0 +1,8 @@
+The high-level idea here is that we're basically trying to equate the course list to a graph where a course being a prerequisite of another is equivalent to an edge connecting the two.
+For us to be able to take the courses, this graph must not have any cycles, so we have to find a way to see if there is cycles in the graph.
+
+We first create an adjacency list and an array to signify the indegrees.
+Next we do a sorta DFS-Kahn's thing using the indegrees and a queue to search through the graph and do a topological sort to sort-of "simulate" taking the courses
+
+If there are some classes whose prerequisites are unable to be completed, the number of completed courses will be under the total courses,
+and the return statement will return false.
