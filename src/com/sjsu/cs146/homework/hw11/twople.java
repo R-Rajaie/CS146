@@ -1,4 +1,4 @@
-package com.sjsu.cs146.hw11;
+package com.sjsu.cs146.homework.hw11;
 
 public class twople {
     int val1;
