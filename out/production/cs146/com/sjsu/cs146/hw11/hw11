@@ -1,0 +1,16 @@
+The main idea is that we want to travel to every node that is the same color as the original node and change it to the color we want.
+
+In order to achieve this with the current method specifications,
+I make a helper method that is passed info like the height and width of the matrix and the original color.
+We pass the correct information about it to the helper method, then begin our proper algorithm.
+
+I wanted to make my own tuple class (I named it twople!) before some googling revealed I could do the same thing with the points.
+Only problem was that I couldn't get points to work in a stack/queue so I basically had to implement a queue myself.
+
+It will check every surrounding node with the isIn method to ensure that the node both exists in the matrix and has the
+specifications we want (it's the same color as the current node and in the case when the current color and new color are the same,
+that it's not already the new color).
+If it passes these qualifications, we will recolor it then add it to the queue so that its surrounding nodes are checked as well.
+
+We do this until the queue is empty, signaling we've traveled to all nodes we want to travel to (and have recolored them).
+We can then pass the helper method's result into the main method, and pass the main method result.

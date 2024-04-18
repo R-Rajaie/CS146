@@ -1,0 +1,4 @@
+This is basically BFS, so we can start by making a queue.
+We'll put our root in the queue, and then begin our BFS.
+We take an iterative approach, popping nodes from the queue, adding them to the list for the given level,
+then adding their nodes to the queue before submitting our current list for the current level into the grand list. 
