@@ -1,0 +1,5 @@
+We first create an edge list of the cities.
+
+We then can begin our main algorithm, where we iterate over every city.
+We run Dijsktra's on each city to find the number of neighboring cities within the threshold.
+If we find a city with a lower number than the current minimum, we use that one instead.
