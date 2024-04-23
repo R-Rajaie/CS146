@@ -4,4 +4,9 @@ Essentially, this is just finding the MST of the graph, then.
 We do Kruskal's first to find the MST. Since the 0 well is free we'll definitely add that,
 we'll add an edge between it and the 0 house.
 We then sort the pipes array so that we know we can traverse it.
-We'll traverse the edges, and if this edge finds a new node to connect, we choose it
+
+The real meat of the algorithm then begins, where we take each connection and evaluate if they have the same parent.
+If not, we know it's a new connection, add the cost c, and decrement the number of houses left to be connected.
+We do this until we've either looped through all connections or connected all houses.
+
+We find parents through recursion in the find method.
