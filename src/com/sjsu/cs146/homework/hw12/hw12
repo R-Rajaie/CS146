@@ -1,0 +1,7 @@
+We can treat this like a graph problem, treating the houses like nodes and the connections between them as edges.
+Essentially, this is just finding the MST of the graph, then.
+
+We do Kruskal's first to find the MST. Since the 0 well is free we'll definitely add that,
+we'll add an edge between it and the 0 house.
+We then sort the pipes array so that we know we can traverse it.
+We'll traverse the edges, and if this edge finds a new node to connect, we choose it
