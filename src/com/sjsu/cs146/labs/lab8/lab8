@@ -1,0 +1,13 @@
+In order to find the optimal solution, we must tabulate all the possible solutions as following an optimal solution to sub-problems will not always yield the optimal solution.
+
+We will approach this with tabulation. We will create a table from every possible amount from 0 to our final amount.
+We will fill it with -1 before we fill it in (because in the end the values we cant find will be -1 anyways which is advantageous to us).
+We put 0 in the 0th position because 0 cents will always only require 0 coins.
+We then pass it into a helper method which includes our tabulation table.
+
+This is a recursive method. First we create a highest possible count, then increment over every coin in the array.
+This function will essentially ask if subtracting our current goal amount by the current coin will keep it non-negative.
+If so, we go down that path and increment the count accordingly.
+Then we return the table count at the desired amount,
+
+The tabulation allows us to solve smaller amounts before we move onto bigger amounts, so it ends up being far faster.
